@@ -1,0 +1,28 @@
+[galera]
+#turn replication on/off
+wsrep_on=ON
+
+#replication library home path
+wsrep_provider=/usr/lib64/galera/libgalera_smm.so
+
+#add your node ips here
+wsrep_cluster_address=gcomm://10.10.10.101,10.10.10.102,10.10.10.89
+
+binlog_format=row
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+
+#Cluster name
+wsrep_cluster_name=newcluster
+
+# Allow server to accept connections on all interfaces.
+bind-address=0.0.0.0
+
+# this server ip, change for each server
+wsrep_node_address=10.10.10.102
+
+# this server name, change for each server
+wsrep_node_name=galera_node2
+
+wsrep_sst_method=rsync
+#end of gaalera settings
